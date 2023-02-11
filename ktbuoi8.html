@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="display-4 mt3-3"> Fetch API</h1>
+        <button class="btn btn-primary" id="myBtn"> Get Data</button>
+    </div>
+    <div id="output">
+        
+    </div>
+
+    <script src="./ktday8.js">
+
+let menu = ["rau xào","thịt luộc","gà rán"];
+//let n = prompt("Người dùng nhập số món ăn muốn lưu:");                 // n là biến người dùng nhập
+//n = Number(n);                                                         // hieu la nguoi dung nhap so
+
+//let i = 1                                                                /* số lg vòng lặp */
+//do{
+//    let x = prompt(`Mời người dùng nhập món ăn thứ ${i}`);              // hiểu là khi in ra Mời người dùng nhập món ăn thứ i <=> số món ăn người dùng đã nhập
+//    menu.push(x);
+//    i = i+1;
+//}
+//while (i <= n);
+
+//console.log ("Menu mon an hien tai la:", menu);
+
+
+let input;
+do {
+    input = prompt("mời mn nhập vào C, R, U, D")
+    if (input == "c") {
+        menu.push(prompt("mời ng dùng nhập món: "))
+        console.log("menu món sau khi nhập:", menu)
+        localStorage.setItem("menu", menu);
+    }
+    else if (input == "r") {
+    console.log("menu món ăn sau khi thêm là", menu);
+    alert(menu);
+    }
+
+    else if ( input == "u") {
+        let vitriupdate = menu.indexOf(prompt("ng dùng nhập món ăn muốn cập nhập"))
+        menu[vitriupdate] = prompt("ng dùng nhập món thay thế món cũ")
+        console.log("menu món sau khi update:", menu)
+        localStorage.setItem("menu", menu);
+    }
+    else if (input == "d") {
+    let vitridelete = menu.indexOf(prompt("ng dùng nhập món ăn muốn xóa: "));
+    /* hàm để xóa là spilce */
+    menu.splice(vitridelete, 1)
+    console.log("menu món sau khi delete:", menu)
+    localStorage.setItem("menu", menu);
+
+}
+else {
+    alert("ko tồn tại")
+}
+
+}
+while (input == "c" || input == "r" || input == "u" || input =="d" )
+
+    </script>
+</body>
+</html>
