@@ -19,19 +19,6 @@
     <script >
 
 let menu = ["rau xào","thịt luộc","gà rán"];
-//let n = prompt("Người dùng nhập số món ăn muốn lưu:");                 // n là biến người dùng nhập
-//n = Number(n);                                                         // hieu la nguoi dung nhap so
-
-//let i = 1                                                                /* số lg vòng lặp */
-//do{
-//    let x = prompt(`Mời người dùng nhập món ăn thứ ${i}`);              // hiểu là khi in ra Mời người dùng nhập món ăn thứ i <=> số món ăn người dùng đã nhập
-//    menu.push(x);
-//    i = i+1;
-//}
-//while (i <= n);
-
-//console.log ("Menu mon an hien tai la:", menu);
-
 
 let input;
 do {
@@ -54,7 +41,7 @@ do {
     }
     else if (input == "d") {
     let vitridelete = menu.indexOf(prompt("ng dùng nhập món ăn muốn xóa: "));
-    /* hàm để xóa là spilce */
+    
     menu.splice(vitridelete, 1)
     console.log("menu món sau khi delete:", menu)
     localStorage.setItem("menu", menu);
